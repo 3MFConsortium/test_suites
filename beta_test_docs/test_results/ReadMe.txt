@@ -1,1 +1,0 @@
-Location to store results of beta testing.
