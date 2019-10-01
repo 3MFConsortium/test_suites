@@ -1,6 +1,6 @@
 # 3MF test_suites
 ## Version 1.0
-## Status: draft
+## Status: Published
 This repository contains 3MF conformance test suites. Each test suite provides coverage for a specific combination of 3MF Core and Extension requirements. The test_suites repository can be downloaded as a zip file.
 
 It consists in 6 test suites:
