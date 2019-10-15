@@ -1,12 +1,29 @@
-# 3MF test_suites
-## Version 1.0
-## Status: Published
-This repository contains 3MF conformance test suites. Each test suite provides coverage for a specific combination of 3MF Core and Extension requirements. The test_suites repository can be downloaded as a zip file.
+# 3MF Conformance Test Suites
+| **Version** | 1.0 |
+| --- | --- |
+| **Status** | Published |
 
-It consists in 6 test suites:
-* Suite 1: 3MF core spec plus the slice and the production extensions.
-* Suite 2: 3MF core spec plus the materials and the production extensions.
-* Suite 3: 3MF core spec.
-* Suite 4: 3MF core spec plus the slice extension.
-* Suite 5: 3MF core spec plus the production extension.
-* Suite 6: 3MF core spec plus the materials extension.
+## Overview
+
+This repository contains 3MF conformance test suites. Each test suite provides coverage for a specific combination of 3MF Core and Extension Specification requirements: 
+| **Test Suite** | **Core Specification** | **Production Extension** | **Materials Extension** | **Slice Extension** |
+| --- | --- | --- | --- | --- |
+| Suite 1 | X | X |   | X |
+| Suite 2 | X | X | X |   |
+| Suite 3 | X |   |   |   |
+| Suite 4 | X |   |   | X |
+| Suite 5 | X | X |   |   |
+| Suite 6 | X |   | X |   |
+
+The test suites repository can be downloaded as a zip file under [releases](../../releases).
+Detailed information about the test cases can be found in the [3MF_Test_Specification_v1_0](test_specification/3MF_Test_Specification_v1_0.pdf)-document.
+
+All test cases are based on the following versions of the 3MF specifications:
+* 3MF Core Specification - [Version 1.2.3](https://github.com/3MFConsortium/spec_core/blob/1.2.3/3MF%20Core%20Specification.md)
+* 3MF Materials and Properties Extension - [Version 1.2.1](https://github.com/3MFConsortium/spec_materials/blob/1.2.1/3MF%20Materials%20Extension.md)
+* 3MF Production Extension - [Version 1.1.2](https://github.com/3MFConsortium/spec_production/blob/1.1.2/3MF%20Production%20Extension.md)
+* 3MF Slice Extension - [Version 1.0.2](https://github.com/3MFConsortium/spec_slice/blob/1.0.2/3MF%20Slice%20Extension.md) and 
+* [Office Open XML File Formats - Open Packaging Conventions - December 2012](https://www.ecma-international.org/news/TC45_current_work/Office%20Open%20XML%20Part%202%20-%20Open%20Packaging%20Conventions.pdf)
+
+
+
