@@ -5,7 +5,8 @@
 
 ## Overview
 
-This repository contains 3MF conformance test suites. Each test suite provides coverage for a specific combination of 3MF Core and Extension Specification requirements: 
+This repository contains 3MF conformance test suites. Each test suite provides coverage for a specific combination of 3MF Core and Extension Specification requirements:
+
 | **Test Suite** | **Core Specification** | **Production Extension** | **Materials Extension** | **Slice Extension** |
 | --- | --- | --- | --- | --- |
 | Suite 1 | X | X |   | X |
