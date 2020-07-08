@@ -9,13 +9,13 @@ This repository contains 3MF conformance test suites. Each test suite provides c
 
 | **Test Suite** | **Core Specification** | **Production Extension** | **Materials Extension** | **Slice Extension** |**Beam Extension** |
 | --- | --- | --- | --- | --- | --- |
-| Suite 1 | X | X |   | X | X |
+| Suite 1 | X | X |   | X |   |
 | Suite 2 | X | X | X |   |   |
 | Suite 3 | X |   |   |   |   |
 | Suite 4 | X |   |   | X |   |
 | Suite 5 | X | X |   |   |   |
 | Suite 6 | X |   | X |   |   |
-| Suite 7 | X |   | X |   | X |
+| Suite 7 | X |   |   |   | X |
 
 The test suites repository can be downloaded as a zip file under [releases](../../releases).
 Detailed information about the test cases can be found in the [3MF_Test_Specification_v1_23](test_specification/3MF_Test_Specification_v1_23.pdf)-document.
