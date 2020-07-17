@@ -15,7 +15,7 @@ This repository contains 3MF conformance test suites. Each test suite provides c
 | Suite 4 | X |   |   | X |   |
 | Suite 5 | X | X |   |   |   |
 | Suite 6 | X |   | X |   |   |
-| Suite 7 | X |   |   |   | X |
+| Suite 7 | X | X  |   |   | X |
 
 The test suites repository can be downloaded as a zip file under [releases](../../releases).
 Detailed information about the test cases can be found in the [3MF_Test_Specification_v1_24](test_specification/3MF_Test_Specification_v1_24.pdf)-document.
