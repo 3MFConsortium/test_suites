@@ -1,0 +1,1 @@
+Note that the beam lattice test suite does not contain tests for the 3MF Core specification requirements, so the OPC and Core test cases should be run from Suite5_Core_Prod in addition to the beam lattice test cases.

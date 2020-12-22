@@ -1,0 +1,1 @@
+Note that the secure content test suite does not contain tests for the 3MF Core specification requirements nor a full set of production extension test cases, so all test cases should be run from Suite5_Core_Prod in addition to the secure content test cases.
