@@ -6,7 +6,7 @@
 ## Overview
 
 This repository contains 3MF conformance test suites. Each test suite provides coverage for a specific combination of 3MF Core and Extension Specification requirements:
-<div align="justify">
+
 | **Test Suite** | **Core Spec** | **Production Extension** | **Materials Extension** | **Slice Extension** |**Beam Lattice Extension** |**Secure Content Extension** |
 | --- | --- | --- | --- | --- | --- | --- |
 | Suite 1 | X | X |   | X |   |   |
@@ -17,7 +17,7 @@ This repository contains 3MF conformance test suites. Each test suite provides c
 | Suite 6 | X |   | X |   |   |   |
 | Suite 7 |  |    |   |   | X |   |
 | Suite 8 |  |    |   |   |   | X |
-</div>
+
 The test suites repository can be downloaded as a zip file under [releases](../../releases).
 Detailed information about the test cases can be found in the [3MF_Test_Specification_v1_27](test_specification/3MF_Test_Specification_v1_27.pdf)-document.
 
