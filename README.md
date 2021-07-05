@@ -1,7 +1,7 @@
 # 3MF Conformance Test Suites
 | **Version** | 2.x.x |
 | --- | --- |
-| **Status** | unreleased |
+| **Status** | Unreleased |
 
 ## Overview
 
