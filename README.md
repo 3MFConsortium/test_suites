@@ -1,5 +1,5 @@
 # 3MF Conformance Test Suites
-| **Version** | 2.x.x |
+| **Version** | 2.1.0 |
 | --- | --- |
 | **Status** | Unreleased |
 
@@ -17,12 +17,13 @@ This repository contains 3MF conformance test suites. Each test suite provides c
 | Suite 6 | X |   | X |   |   |   |
 | Suite 7 |  |    |   |   | X |   |
 | Suite 8 |  |  X |   |   |   | X |
+| Suite 9 | X |   |   |   |   |   |
 
 The test suites repository can be downloaded as a zip file under [releases](../../releases).
-Detailed information about the test cases can be found in the [3MF_Test_Specification_v2_0_0](test_specification/3MF_Test_Specification_v2_0_0.pdf)-document.
+Detailed information about the test cases can be found in the [3MF_Test_Specification_v2_1_0](test_specification/3MF_Test_Specification_v2_1_0.pdf)-document.
 
 All test cases are based on the following versions of the 3MF specifications:
-* 3MF Core Specification - [Version 1.2.3](https://github.com/3MFConsortium/spec_core/blob/1.2.3/3MF%20Core%20Specification.md)
+* 3MF Core Specification - [Version 1.3.0](https://github.com/3MFConsortium/spec_core/blob/1.3.0/3MF%20Core%20Specification.md)
 * 3MF Materials and Properties Extension - [Version 1.2.1](https://github.com/3MFConsortium/spec_materials/blob/1.2.1/3MF%20Materials%20Extension.md)
 * 3MF Production Extension - [Version 1.1.2](https://github.com/3MFConsortium/spec_production/blob/1.1.2/3MF%20Production%20Extension.md)
 * 3MF Slice Extension - [Version 1.0.2](https://github.com/3MFConsortium/spec_slice/blob/1.0.2/3MF%20Slice%20Extension.md) 
