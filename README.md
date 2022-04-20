@@ -31,5 +31,5 @@ All test cases are based on the following versions of the 3MF specifications:
 * 3MF Secure Content Extension - [Version 1.0.2](https://github.com/3MFConsortium/spec_securecontent/blob/1.0.2/3MF%20Secure%20Content.md) 
 * [Office Open XML File Formats - Open Packaging Conventions - December 2012](https://www.ecma-international.org/news/TC45_current_work/Office%20Open%20XML%20Part%202%20-%20Open%20Packaging%20Conventions.pdf)
 
-
+This repository also contains a consolodated version of the 3MF schema.
 
