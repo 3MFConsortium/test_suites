@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TestResults dateTime="2022-10-03T16:20:02Z">
+    <TestResult dateTime="2022-10-03T16:20:02Z" file="P_XPX_0310_01.3mf" result="Pass"/>
+    <TestResult dateTime="2022-10-03T16:20:02Z" file="P_XPX_0329_01.3mf" result="Pass"/>
+    <TestResult dateTime="2022-10-03T16:20:03Z" file="P_XXM_0504_03.3mf" result="Pass"/>
+    <TestResult dateTime="2022-10-03T16:20:03Z" file="P_XXM_0517_33.3mf" result="Pass"/>
+    <TestResult dateTime="2022-10-03T16:20:03Z" file="P_XXX_0306_03.3mf" result="Pass"/>
+    <TestResult dateTime="2022-10-03T16:20:04Z" file="P_XXX_0903_01.3mf" result="Pass"/>
+    <TestResult dateTime="2022-10-03T16:20:05Z" file="P_XXX_0905_07.3mf" result="Pass"/>
+</TestResults>

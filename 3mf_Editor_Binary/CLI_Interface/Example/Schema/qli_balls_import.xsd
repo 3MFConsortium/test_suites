@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/beamlattice/balls/2020/07" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://schemas.microsoft.com/3dmanufacturing/beamlattice/balls/2020/07" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+	<xs:annotation>
+		<xs:documentation><![CDATA[
+    Schema notes:
+ 
+    Items within this schema follow a simple naming convention of appending a prefix indicating the type of element for references:
+ 
+    Unprefixed: Element names
+    CT_: Complex types
+    ST_: Simple types
+   
+    ]]></xs:documentation>
+	</xs:annotation>
+	<!-- Complex Types -->
+	<xs:complexType name="CT_Ball">
+		<xs:sequence>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="vindex" type="ST_ResourceIndex" use="required"/>
+		<xs:attribute name="r" type="ST_PositiveNumber"/>
+		<xs:attribute name="p" type="ST_ResourceIndex"/>
+		<xs:attribute name="pid" type="ST_ResourceID"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Balls">
+		<xs:sequence>
+			<xs:element ref="ball" maxOccurs="unbounded"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_BallRef">
+		<xs:sequence>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="index" type="ST_ResourceIndex" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<!-- Simple Types -->
+	<xs:simpleType name="ST_BallMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="mixed"/>
+			<xs:enumeration value="all"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_ResourceID">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="2147483648"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_PositiveNumber">
+		<xs:restriction base="xs:double">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="((\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_ResourceIndex">
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxExclusive value="2147483648"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Elements -->
+	<xs:element name="ball" type="CT_Ball"/>
+	<xs:element name="balls" type="CT_Balls"/>
+	<xs:element name="ballref" type="CT_BallRef"/>
+	<xs:attribute name="ballmode" type="ST_BallMode" default="none"/>
+	<xs:attribute name="ballradius" type="ST_PositiveNumber"/>
+</xs:schema>
