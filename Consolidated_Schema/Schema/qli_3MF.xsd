@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by James Zuber (private) -->
-<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" xmlns:m="http://schemas.microsoft.com/3dmanufacturing/material/2015/02" xmlns:s="http://schemas.microsoft.com/3dmanufacturing/slice/2015/07" xmlns:pt="http://print.ticket.com" xmlns:p="http://schemas.microsoft.com/3dmanufacturing/production/2015/06" xmlns:b="http://schemas.microsoft.com/3dmanufacturing/beamlattice/2017/02" xmlns:b2="http://schemas.microsoft.com/3dmanufacturing/beamlattice/balls/2020/07" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mm="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07" xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
+<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" xmlns:m="http://schemas.microsoft.com/3dmanufacturing/material/2015/02" xmlns:s="http://schemas.microsoft.com/3dmanufacturing/slice/2015/07" xmlns:pt="http://print.ticket.com" xmlns:p="http://schemas.microsoft.com/3dmanufacturing/production/2015/06" xmlns:b="http://schemas.microsoft.com/3dmanufacturing/beamlattice/2017/02" xmlns:b2="http://schemas.microsoft.com/3dmanufacturing/beamlattice/balls/2020/07" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mm="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07" xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/slice/2015/07" schemaLocation="qli_slice_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/beamlattice/2017/02" schemaLocation="qli_beamlattice_import.xsd"/>
@@ -9,6 +9,7 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/material/2015/02" schemaLocation="qli_material.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07" schemaLocation="qli_mirrormesh.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" schemaLocation="qli_triangleset.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
 	<!-- Complex Types -->
 	<xs:complexType name="CT_Model">
 		<xs:sequence>
@@ -76,7 +77,9 @@
 				<xs:element ref="mesh"/>
 				<xs:element ref="components"/>
 			</xs:choice>
-			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="pa:alternatives" minOccurs="0" maxOccurs="1"/>
+			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
+			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
 		</xs:sequence>
 		<xs:attribute name="id" type="ST_ResourceID" use="required"/>
 		<xs:attribute ref="p:UUID" use="required"/>
@@ -88,6 +91,8 @@
 		<xs:attribute name="name" type="xs:string"/>
 		<xs:attribute ref="s:slicestackid"/>
 		<xs:attribute ref="s:meshresolution"/>
+		<xs:attribute name="modelresolution" type="pa:ST_ModelResolution" default="fullres"/>
+		
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Mesh">
