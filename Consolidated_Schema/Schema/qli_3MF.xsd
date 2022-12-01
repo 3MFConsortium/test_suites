@@ -91,9 +91,7 @@
 		<xs:attribute name="name" type="xs:string"/>
 		<xs:attribute ref="s:slicestackid"/>
 		<xs:attribute ref="s:meshresolution"/>
-		<xs:attribute name="modelresolution" type="pa:ST_ModelResolution" default="fullres"/>
-		
-		<xs:anyAttribute namespace="##other" processContents="lax"/>
+		<xs:attribute ref="pa:modelresolution"/>	
 	</xs:complexType>
 	<xs:complexType name="CT_Mesh">
 		<xs:sequence>

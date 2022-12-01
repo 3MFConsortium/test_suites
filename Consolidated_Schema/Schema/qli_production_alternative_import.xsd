@@ -46,7 +46,6 @@
 	
 	<!-- Jim -->
 	<!-- Needed to restructure modelresolution as attribute so it could be referenced in object -->
-	
 
 	<xs:simpleType name="ST_ModelResolution">
 		<xs:restriction base="xs:string">
@@ -56,10 +55,11 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-
-
 	<!-- Elements -->
 	<xs:element name="alternatives" type="CT_Alternatives"/>
 	<xs:element name="alternative" type="CT_Alternative"/>
+	
+	<!-- Attributes -->
+	<xs:attribute name="modelresolution" type="ST_ModelResolution" default="fullres"/>	
 	
 </xs:schema>
