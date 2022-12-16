@@ -25,7 +25,7 @@ Detailed information about the test cases can be found in the [3MF_Test_Specific
 All test cases are based on the following versions of the 3MF specifications:
 * 3MF Core Specification - [Version 1.3.0](https://github.com/3MFConsortium/spec_core/blob/1.3.0/3MF%20Core%20Specification.md)
 * 3MF Materials and Properties Extension - [Version 1.2.1](https://github.com/3MFConsortium/spec_materials/blob/1.2.1/3MF%20Materials%20Extension.md)
-* 3MF Production Extension - [Version 1.2](https://github.com/3MFConsortium/spec_production/blob/1.2/3MF%20Production%20Extension.md)
+* 3MF Production Extension - [Version 1.2.0](https://github.com/3MFConsortium/spec_production/blob/1.2.0/3MF%20Production%20Extension.md)
 * 3MF Slice Extension - [Version 1.0.2](https://github.com/3MFConsortium/spec_slice/blob/1.0.2/3MF%20Slice%20Extension.md) 
 * 3MF Beam Lattice Extension - [Version 1.2.0](https://github.com/3MFConsortium/spec_beamlattice/blob/1.2.0/3MF%20Beam%20Lattice%20Extension.md) 
 * 3MF Secure Content Extension - [Version 1.0.2](https://github.com/3MFConsortium/spec_securecontent/blob/1.0.2/3MF%20Secure%20Content.md) 
