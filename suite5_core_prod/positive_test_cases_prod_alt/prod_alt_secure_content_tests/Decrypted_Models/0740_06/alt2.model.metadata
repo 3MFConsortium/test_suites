@@ -1,0 +1,12 @@
+Source File: alt2.model_decrypted
+Output File: C:\Users\jzuber\OneDrive - QualityLogic\3MF Project\3MF Consortium\Production_Alternatives\Beta_Test_Cases\Positive_Secure\0740_06\alt2.model
+Compress = True
+SHA256 = False
+Fixed secretKey1 = True
+Extended Header = False
+Non-Test PKI PEMs = True
+aad (Base64)= b''
+aesIV (Base64): b'XX76Y/wbj+f+Ms1U'
+authTag (Base64): b'IofM8A6M+uXjShuo2YL/ZA=='
+nEncrypted Key (Base64):
+ b'EnDDvOmFLXj8gdhpZHSh6hnucbdhBUhOrH4+gOsB+dLBTxuw9GSqyXzYshaiUjR2XTidu52BWlf5NId7l5AdysQH5sODTKFRs1vhorAvUJZaapOYYbQ8cp4Jyu8zCuwHkJ2lDdlYnfJiwhOCmdtmMyBI4Pv6X7ELdNqvNusxjyJy2lGdnaE+kl0HsU7+rqRC3gZjs87h+mbIJfEu7YuVoC1yTomH1wnHPiTUSHsJ6i6Ak1hLWGthqbcCvRFv38Lqc8czCne+Xgf5fHjC1f1vWYLWhuT8VTW4L5lkxXhDLBu27tQa5Vn8YThzC4P2AQ+p4ooWQs5SRgat0ydpEffreQ=='
