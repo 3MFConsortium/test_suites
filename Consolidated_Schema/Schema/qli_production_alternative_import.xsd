@@ -44,9 +44,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<!-- Jim -->
-	<!-- Needed to restructure modelresolution as attribute so it could be referenced in object -->
-
 	<xs:simpleType name="ST_ModelResolution">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="fullres"/>

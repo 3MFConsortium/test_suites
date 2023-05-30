@@ -77,8 +77,18 @@
 			<xs:pattern value="#[0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f]([0-9|A-F|a-f][0-9|A-F|a-f])?"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ST_ModelResolution">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fullres"/>
+			<xs:enumeration value="lowres"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Attributes -->
 	<xs:attribute name="slicestackid" type="ST_ResourceID"/>
 	<xs:attribute name="slicepath" type="ST_UriReference"/>
+	<xs:attribute name="modelresolution" type="ST_ModelResolution" default="fullres"/>	
+	
 	<!-- Elements -->
 	<xs:element name="slicestack" type="CT_SliceStack"/>
 	<xs:element name="sliceref" type="CT_SliceRef"/>
@@ -87,12 +97,4 @@
 	<xs:element name="vertex" type="CT_2DVertex"/>
 	<xs:element name="polygon" type="CT_Polygon"/>
 	<xs:element name="segment" type="CT_Segment"/>
-	<xs:attribute name="meshresolution">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:enumeration value="fullres"/>
-				<xs:enumeration value="lowres"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
 </xs:schema>
