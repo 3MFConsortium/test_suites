@@ -11,6 +11,8 @@
 	xmlns:mm="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07"
 	xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07"
 	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
+	xmlns:d="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05"
+	xmlns:bo="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2022/06"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
 	
@@ -23,6 +25,8 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07" schemaLocation="qli_mirrormesh.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" schemaLocation="qli_triangleset.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05" schemaLocation="qli_displacement_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2022/06" schemaLocation="qli_booleans_import.xsd"/>
 	
 	<!-- Complex Types -->
 	<xs:complexType name="CT_Model">
@@ -55,6 +59,9 @@
 			<xs:element ref="m:pbspeculartexturedisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="m:translucentdisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="s:slicestack" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="object" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -90,6 +97,7 @@
 			<xs:choice>
 				<xs:element ref="mesh"/>
 				<xs:element ref="components"/>
+				<xs:element ref="bo:booleans"/>
 			</xs:choice>
 			<xs:element ref="pa:alternatives" minOccurs="0" maxOccurs="1"/>
 			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
@@ -136,6 +144,7 @@
 		<xs:sequence>
 			<xs:element ref="triangle" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attribute ref="d:did"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Triangle">
 		<xs:attribute name="v1" type="ST_ResourceIndex" use="required"/>
@@ -145,6 +154,10 @@
 		<xs:attribute name="p2" type="ST_ResourceIndex"/>
 		<xs:attribute name="p3" type="ST_ResourceIndex"/>
 		<xs:attribute name="pid" type="ST_ResourceID"/>
+		<xs:attribute ref="d:d1"/>
+		<xs:attribute ref="d:d2"/>
+		<xs:attribute ref="d:d3"/>
+		<xs:attribute ref="d:did"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Components">
