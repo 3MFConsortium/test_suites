@@ -87,7 +87,7 @@
 	<!-- Attributes -->
 	<xs:attribute name="slicestackid" type="ST_ResourceID"/>
 	<xs:attribute name="slicepath" type="ST_UriReference"/>
-	<xs:attribute name="modelresolution" type="ST_ModelResolution" default="fullres"/>	
+	<xs:attribute name="meshresolution" type="ST_ModelResolution" default="fullres"/>	
 	
 	<!-- Elements -->
 	<xs:element name="slicestack" type="CT_SliceStack"/>
