@@ -10,14 +10,14 @@
 
 	<xs:complexType name="CT_Alternatives">
 		<xs:sequence>
-			<xs:element ref="alternative" minOccurs="0" maxOccurs="2147483647"/>
+			<xs:element ref="alternative" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 	
 	<xs:complexType name="CT_Alternative">
 		<xs:sequence>
-			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="2147483647"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="objectid" type="ST_ResourceID" use="required"/>
 		<xs:attribute name="UUID" type="ST_UUID" use="required"/>
