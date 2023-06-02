@@ -17,8 +17,3 @@ It includes the draft versions of the following 3MF extensions:
 * [3MF Secure Content Extension - Draft 0.7.11](https://github.com/3MFConsortium/spec_booleans/blob/dev_0.7/3MF%20Boolean%20operations.md) 
 * [3MF Displacement Extension - Draft 0.6.1](https://github.com/3MFConsortium/spec_displacement/blob/dev/3MF%20Displacement%20Extension.md) 
 * [3MF Volumetric Extension - Draft 0.7.0](http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01) 
-
-In addition, the following 3MF HP provated extensions are implemented in the consolidated schema:
-+ [3MF HP Part Optimizations Version 1.0.0](https://github.azc.ext.hp.com/3DSoftware/3mf-hp-part-optimization).
-+ [3MF HP Boolean Operations Version 1.0.0](https://github.azc.ext.hp.com/3DSoftware/3mf-hp-boolean-operations).
-+ [3MF HP Simple Dynamic Labels Draft 0.1.0](https://github.azc.ext.hp.com/3DSoftware/3mf-hp-simple-dynamic-labels).
