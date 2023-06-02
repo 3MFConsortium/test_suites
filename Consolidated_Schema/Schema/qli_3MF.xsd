@@ -46,7 +46,7 @@
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Resources">
-		<xs:choice maxOccurs="unbounded">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element ref="basematerials" minOccurs="0" maxOccurs="unbounded"/>
 			<!--Commented out as schema was giving me ambigious error when I added slicestack-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
@@ -104,7 +104,7 @@
 				<xs:element ref="components"/>
 				<xs:element ref="bo:booleans"/>
 			</xs:choice>
-			<xs:element ref="pa:alternatives" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="pa:alternatives" minOccurs="0"/>
 			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
 		</xs:sequence>
@@ -125,7 +125,7 @@
 			<xs:element ref="vertices"/>
 			<!-- Note that if Beam Lattice is a mandatory extension, triangles becomes optional if beamlattice element present-->
 			<!--  left triangle as optional for now-->
-			<xs:element ref="triangles" minOccurs="0"/>
+			<xs:element ref="triangles"/>
 			<xs:element ref="ts:trianglesets" minOccurs="0"/>
 			<xs:element ref="mm:mirrormesh" minOccurs="0"/>
 			<xs:element ref="b:beamlattice" minOccurs="0"/>
