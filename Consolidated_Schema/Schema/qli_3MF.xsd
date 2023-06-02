@@ -13,6 +13,7 @@
 	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
 	xmlns:d="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05"
 	xmlns:bo="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2022/06"
+	xmlns:v="http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
 	
@@ -27,6 +28,7 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05" schemaLocation="qli_displacement_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2022/06" schemaLocation="qli_booleans_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01" schemaLocation="qli_volumetric_import.xsd"/>
 	
 	<!-- Complex Types -->
 	<xs:complexType name="CT_Model">
@@ -62,6 +64,9 @@
 			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:scalarfield" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:vector3dfield" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="object" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -124,6 +129,7 @@
 			<xs:element ref="ts:trianglesets" minOccurs="0"/>
 			<xs:element ref="mm:mirrormesh" minOccurs="0"/>
 			<xs:element ref="b:beamlattice" minOccurs="0"/>
+			<xs:element ref="v:volumedata" minOccurs="0" maxOccurs="1"/>
 			<!--Commented out as schema was giving me ambigious error when I added beamlattice-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
 		</xs:sequence>
