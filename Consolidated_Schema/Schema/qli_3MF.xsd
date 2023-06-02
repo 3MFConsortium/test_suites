@@ -129,7 +129,7 @@
 			<xs:element ref="ts:trianglesets" minOccurs="0"/>
 			<xs:element ref="mm:mirrormesh" minOccurs="0"/>
 			<xs:element ref="b:beamlattice" minOccurs="0"/>
-			<xs:element ref="v:volumedata" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="v:volumedata" minOccurs="0"/>
 			<!--Commented out as schema was giving me ambigious error when I added beamlattice-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
 		</xs:sequence>
