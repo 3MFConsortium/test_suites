@@ -24,8 +24,8 @@
 	<xs:complexType name="CT_BeamLattice">
 		<xs:sequence>
 			<xs:element ref="beams"/>
-			<xs:element ref="b2:balls" minOccurs="0" maxOccurs="1"/>
 			<xs:element ref="beamsets" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="b2:balls" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="minlength" type="b2:ST_PositiveNumber" use="required"/>
 		<xs:attribute name="radius" type="b2:ST_PositiveNumber" use="required"/>
