@@ -12,7 +12,7 @@
 	xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07"
 	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
 	xmlns:d="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05"
-	xmlns:bo="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2022/06"
+	xmlns:bo="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2023/07"
 	xmlns:v="http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
@@ -27,7 +27,7 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" schemaLocation="qli_triangleset.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05" schemaLocation="qli_displacement_import.xsd"/>
-	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2022/06" schemaLocation="qli_booleans_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2023/07" schemaLocation="qli_booleans_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01" schemaLocation="qli_volumetric_import.xsd"/>
 	
 	<!-- Complex Types -->
@@ -62,7 +62,6 @@
 			<xs:element ref="m:translucentdisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="s:slicestack" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:scalarfield" minOccurs="0" maxOccurs="unbounded"/>
@@ -102,7 +101,7 @@
 			<xs:choice>
 				<xs:element ref="mesh"/>
 				<xs:element ref="components"/>
-				<xs:element ref="bo:booleans"/>
+				<xs:element ref="bo:booleanshape"/>
 			</xs:choice>
 			<xs:element ref="pa:alternatives" minOccurs="0"/>
 			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
@@ -113,6 +112,7 @@
 		<xs:attribute name="type" type="ST_ObjectType" default="model"/>
 		<xs:attribute name="pid" type="ST_ResourceID"/>
 		<xs:attribute name="pindex" type="ST_ResourceIndex"/>
+		<xs:attribute ref="d:did"/>
 		<xs:attribute name="thumbnail" type="ST_UriReference"/>
 		<xs:attribute name="partnumber" type="xs:string"/>
 		<xs:attribute name="name" type="xs:string"/>
@@ -233,7 +233,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="ST_ResourceID">
 		<xs:restriction base="xs:positiveInteger">
-			<xs:maxExclusive value="2147483648"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ST_ResourceIndex">

@@ -21,7 +21,6 @@
 		<xs:sequence>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="displacement2d" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element ref="normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:any namespace="##other" processContents="lax" minOccurs="0"
 					maxOccurs="unbounded"/>
@@ -43,48 +42,37 @@
 	
 	<xs:complexType name="CT_Disp2DGroup">
 		<xs:sequence>
+			<xs:element ref="normvector" minOccurs="1" maxOccurs="unbounded"/>
 			<xs:element ref="disp2dcoord" minOccurs="1" maxOccurs="unbounded"/>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="id" type="ST_ResourceID" use="required"/>
 		<xs:attribute name="dispid" type="ST_ResourceID" use="required"/>
-		<xs:attribute name="nid" type="ST_ResourceID" use="required"/>
-		<xs:attribute name="depth" type="ST_Number" use="required"/>
+		<xs:attribute name="height" type="ST_Number" use="required"/>
 		<xs:attribute name="offset" type="ST_Number" default="0"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/> 
 	</xs:complexType>
 	
-	<xs:complexType name="CT_NormalizedVectorGroup">
-		<xs:sequence>
-			<xs:element ref="normvector" minOccurs="1" maxOccurs="unbounded"/>
-			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute name="id" type="ST_ResourceID"  use="required"/>
-		<xs:anyAttribute namespace="##other" processContents="lax"/> 
-	</xs:complexType>
-	
 	<xs:complexType name="CT_NormalizedVector">
-		<xs:attribute name="nx" type="ST_Number" use="required"/>
-		<xs:attribute name="ny" type="ST_Number" use="required"/>
-		<xs:attribute name="nz" type="ST_Number" use="required"/>
+		<xs:attribute name="x" type="ST_Number" use="required"/>
+		<xs:attribute name="y" type="ST_Number" use="required"/>
+		<xs:attribute name="z" type="ST_Number" use="required"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/> 
 	</xs:complexType>
 	
 	<xs:complexType name="CT_Disp2DCoord">
 		<xs:attribute name="u" type="ST_Number" use="required"/>
 		<xs:attribute name="v" type="ST_Number" use="required"/>
-		<xs:attribute name="n" type="ST_ResourceIndex"/>
+		<xs:attribute name="n" type="ST_ResourceIndex" use="required"/>
+		<xs:attribute name="f" type="ST_PositiveNumber" default="1"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/> 
 	</xs:complexType>
 	
-	<xs:complexType name="CT_Triangles">
-		<xs:sequence>
-			<xs:element ref="triangle" minOccurs="1" maxOccurs="unbounded"/>
-		</xs:sequence>
+	<xs:complexType name="CT_Object">
 		<xs:attribute name="did" type="ST_ResourceID"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
-
+	
 	<xs:complexType name="CT_Triangle">
 		<xs:attribute name="d1" type="ST_ResourceIndex"/>
 		<xs:attribute name="d2" type="ST_ResourceIndex"/>
@@ -105,7 +93,6 @@
 			<xs:enumeration value="R"/>
 			<xs:enumeration value="G"/>
 			<xs:enumeration value="B"/>
-			<xs:enumeration value="A"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ST_TileStyle">
@@ -134,12 +121,18 @@
 			<xs:pattern value="((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/> 
 		</xs:restriction> 
 	</xs:simpleType> 
+	<xs:simpleType name="ST_PositiveNumber">
+		<xs:restriction base="xs:double">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="((\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ST_ResourceID">
 		<xs:restriction base="xs:positiveInteger">
 			<xs:maxExclusive value="2147483648"/>
 		</xs:restriction>
 	</xs:simpleType>
-
+	
 	<xs:simpleType name="ST_ResourceIndex">
 		<xs:restriction base="xs:nonNegativeInteger">
 			<xs:maxExclusive value="2147483648"/>
@@ -149,11 +142,10 @@
 	<!-- Elements -->
 	<xs:element name="resources" type="CT_Resources"/>
 	<xs:element name="displacement2d" type="CT_Displacement2D"/>
-	<xs:element name="normvectorgroup" type="CT_NormalizedVectorGroup"/>
 	<xs:element name="normvector" type="CT_NormalizedVector"/>
 	<xs:element name="disp2dgroup" type="CT_Disp2DGroup"/>	
 	<xs:element name="disp2dcoord" type="CT_Disp2DCoord"/>
-	<xs:element name="triangles" type="CT_Triangles"/>
+	<xs:element name="object" type="CT_Object"/>
 	<xs:element name="triangle" type="CT_Triangle"/>
 	
 	<!-- Attributes -->
@@ -161,5 +153,5 @@
 	<xs:attribute name="d2" type="ST_ResourceIndex"/>
 	<xs:attribute name="d3" type="ST_ResourceIndex"/>
 	<xs:attribute name="did" type="ST_ResourceID"/>
-	
-</xs:schema> 
+
+</xs:schema>
