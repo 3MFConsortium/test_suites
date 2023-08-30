@@ -14,6 +14,6 @@ The consolidated schema  utilized the requirements from the following 3MF specif
 * [Office Open XML File Formats - Open Packaging Conventions - December 2012](https://www.ecma-international.org/news/TC45_current_work/Office%20Open%20XML%20Part%202%20-%20Open%20Packaging%20Conventions.pdf)
 
 It includes the draft versions of the following 3MF extensions:
-* [3MF Boolean Operations Extension - Draft 0.9.0](https://github.com/3MFConsortium/spec_booleans/blob/dev_0.9/3MF%20Boolean%20operations.md) 
-* [3MF Displacement Extension - Draft 0.7.1](https://github.com/3MFConsortium/spec_displacement/blob/dev_0.7/3MF%20Displacement%20Extension.md) 
+* [3MF Boolean Operations Extension - Draft 0.9.0](https://github.com/3MFConsortium/spec_booleans/blob/main/3MF%20Boolean%20operations.md) 
+* [3MF Displacement Extension - Draft 0.7.4](https://github.com/3MFConsortium/spec_displacement/blob/dev_0.7/3MF%20Displacement%20Extension.md) 
 * [3MF Volumetric Extension - Draft 0.7.0](http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01) 
