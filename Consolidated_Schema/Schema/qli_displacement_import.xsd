@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05"
+<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/displacement/2023/05"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05"
+	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2023/05"
 	elementFormDefault="unqualified" attributeFormDefault="unqualified" blockDefault="#all">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<xs:annotation> 
@@ -21,6 +21,7 @@
 		<xs:sequence>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="displacement2d" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:any namespace="##other" processContents="lax" minOccurs="0"
 					maxOccurs="unbounded"/>
@@ -42,14 +43,23 @@
 	
 	<xs:complexType name="CT_Disp2DGroup">
 		<xs:sequence>
-			<xs:element ref="normvector" minOccurs="1" maxOccurs="unbounded"/>
 			<xs:element ref="disp2dcoord" minOccurs="1" maxOccurs="unbounded"/>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="id" type="ST_ResourceID" use="required"/>
 		<xs:attribute name="dispid" type="ST_ResourceID" use="required"/>
+		<xs:attribute name="nid" type="ST_ResourceID" use="required"/>
 		<xs:attribute name="height" type="ST_Number" use="required"/>
 		<xs:attribute name="offset" type="ST_Number" default="0"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/> 
+	</xs:complexType>
+	
+	<xs:complexType name="CT_NormalizedVectorGroup">
+		<xs:sequence>
+			<xs:element ref="normvector" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="ST_ResourceID"  use="required"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/> 
 	</xs:complexType>
 	
@@ -142,6 +152,7 @@
 	<!-- Elements -->
 	<xs:element name="resources" type="CT_Resources"/>
 	<xs:element name="displacement2d" type="CT_Displacement2D"/>
+	<xs:element name="normvectorgroup" type="CT_NormalizedVectorGroup"/>
 	<xs:element name="normvector" type="CT_NormalizedVector"/>
 	<xs:element name="disp2dgroup" type="CT_Disp2DGroup"/>	
 	<xs:element name="disp2dcoord" type="CT_Disp2DCoord"/>

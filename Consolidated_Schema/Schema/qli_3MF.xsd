@@ -11,7 +11,7 @@
 	xmlns:mm="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07"
 	xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07"
 	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
-	xmlns:d="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05"
+	xmlns:d="http://schemas.microsoft.com/3dmanufacturing/displacement/2023/05"
 	xmlns:bo="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2023/07"
 	xmlns:v="http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -26,7 +26,7 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07" schemaLocation="qli_mirrormesh.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" schemaLocation="qli_triangleset.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
-	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2018/05" schemaLocation="qli_displacement_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/displacement/2023/05" schemaLocation="qli_displacement_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/booleanoperations/2023/07" schemaLocation="qli_booleans_import.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/volumetric/2022/01" schemaLocation="qli_volumetric_import.xsd"/>
 	
@@ -62,6 +62,7 @@
 			<xs:element ref="m:translucentdisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="s:slicestack" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:scalarfield" minOccurs="0" maxOccurs="unbounded"/>
