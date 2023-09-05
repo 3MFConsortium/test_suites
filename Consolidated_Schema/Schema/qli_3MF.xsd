@@ -151,7 +151,6 @@
 		<xs:sequence>
 			<xs:element ref="triangle" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute ref="d:did"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Triangle">
 		<xs:attribute name="v1" type="ST_ResourceIndex" use="required"/>
