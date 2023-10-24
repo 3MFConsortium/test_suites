@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02"
+<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02/base"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02"
+	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02/base"
 	elementFormDefault="unqualified" attributeFormDefault="unqualified" blockDefault="#all">
 	<!-- Import xml: namespace -->
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"
