@@ -22,6 +22,7 @@
 	<xs:complexType name="CT_Resources">
 		<xs:sequence>
 			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="volumedata" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="image3d" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="function" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
@@ -231,33 +232,33 @@
 	</xs:complexType>
 	
 	<xs:complexType name="CT_Mesh">
-		<xs:sequence>
-			<xs:element ref="volumedata" minOccurs="0" maxOccurs="1"/>
-			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+		<xs:attribute name="volumeid" type="ST_ResourceID" />
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 
+	<xs:complexType name="CT_BoundaryShape">
+		<xs:sequence>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="functionid" type="ST_ResourceID" use="required" />
+		<xs:attribute name="channel" type="xs:QName" use="required" />
+		<xs:attribute name="transform" type="ST_Matrix3D" />
+		<xs:attribute name="minfeaturesize" type="ST_PositiveNumber" default="0" />
+		<xs:attribute name="meshbboxonly" type="xs:boolean" default="false" />
+		<xs:attribute name="fallbackvalue" type="ST_Number" default="0" />
+		<xs:attribute name="meshid" type="ST_ResourceID" use="required" />
+		<xs:attribute name="volumeid" type="ST_ResourceID" />
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	
 	<xs:complexType name="CT_VolumeData">
 		<xs:sequence>
-				<xs:element ref="boundary" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="composite" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="color" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> 
 		</xs:sequence>
-		<xs:anyAttribute namespace="##other" processContents="lax"/>
-	</xs:complexType>
-
-	<xs:complexType name="CT_Boundary">
-		<xs:sequence>
-			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
-		</xs:sequence>
-		<xs:attribute name="functionid" type="ST_ResourceID" use="required" />
-		<xs:attribute name="channel" type="xs:QName" use="required" />
-		<xs:attribute name="transform" type="ST_Matrix3D" />
-		<xs:attribute name="minfeaturesize" type="ST_Number" default="0" />
-		<xs:attribute name="meshbboxonly" type="xs:boolean" default="false" />
-		<xs:attribute name="fallbackvalue" type="ST_Number" default="0" />
+		<xs:attribute name="id" type="ST_ResourceID" use="required" />
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 
@@ -268,7 +269,7 @@
 		<xs:attribute name="functionid" type="ST_ResourceID" use="required" />
 		<xs:attribute name="channel" type="xs:QName" use="required" />
 		<xs:attribute name="transform" type="ST_Matrix3D" />
-		<xs:attribute name="minfeaturesize" type="ST_Number" default="0" />
+		<xs:attribute name="minfeaturesize" type="ST_PositiveNumber" default="0" />
 		<xs:attribute name="fallbackvalue" type="ST_Number" default="0" />
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
@@ -289,7 +290,7 @@
 		<xs:attribute name="functionid" type="ST_ResourceID" use="required" />
 		<xs:attribute name="channel" type="xs:QName" use="required" />
 		<xs:attribute name="transform" type="ST_Matrix3D" />
-		<xs:attribute name="minfeaturesize" type="ST_Number" default="0" />
+		<xs:attribute name="minfeaturesize" type="ST_PositiveNumber" default="0" />
 		<xs:attribute name="fallbackvalue" type="ST_Number" default="0" />
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
@@ -303,7 +304,7 @@
 		<xs:attribute name="transform" type="ST_Matrix3D" />
 		<xs:attribute name="name" type="xs:QName" use="required" />
 		<xs:attribute name="required" type="xs:boolean" use="required" />
-		<xs:attribute name="minfeaturesize" type="ST_Number" default="0" />
+		<xs:attribute name="minfeaturesize" type="ST_PositiveNumber" default="0" />
 		<xs:attribute name="fallbackvalue" type="ST_Number" default="0" />
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
@@ -350,6 +351,12 @@
 		<xs:restriction base="xs:double">
 			<xs:whiteSpace value="collapse"/>
 			<xs:pattern value="((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_PositiveNumber">
+		<xs:restriction base="xs:double">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="((\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ST_Method">
@@ -449,10 +456,10 @@
 	<xs:element name="function" type="CT_Function"/>
 	<xs:element name="functionfromimage3d" type="CT_FunctionFromImage3D"/>
 	<xs:element name="volumedata" type="CT_VolumeData"/>
-	<xs:element name="boundary" type="CT_Boundary"/>
 	<xs:element name="composite" type="CT_Composite"/>
 	<xs:element name="materialmapping" type="CT_MaterialMapping"/>
 	<xs:element name="color" type="CT_Color"/>
 	<xs:element name="property" type="CT_Property"/>
 	<xs:element name="mesh" type="CT_Mesh"/>
+	<xs:element name="boundaryshape" type="CT_BoundaryShape"/>
 </xs:schema>

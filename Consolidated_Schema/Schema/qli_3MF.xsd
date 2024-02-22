@@ -80,6 +80,7 @@
 			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:volumedata" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:function" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="vi:implicitfunction" minOccurs="0" maxOccurs="unbounded"/>
@@ -118,6 +119,7 @@
 			<xs:choice>
 				<xs:element ref="mesh"/>
 				<xs:element ref="components"/>
+				<xs:element ref="v:boundaryshape"/>
 				<xs:element ref="bo:booleanshape"/>
 				<xs:element ref="d:displacementmesh"/>
 			</xs:choice>
@@ -146,10 +148,10 @@
 			<xs:element ref="ts:trianglesets" minOccurs="0"/>
 			<xs:element ref="mm:mirrormesh" minOccurs="0"/>
 			<xs:element ref="b:beamlattice" minOccurs="0"/>
-			<xs:element ref="v:volumedata" minOccurs="0"/>
 			<!--Commented out as schema was giving me ambigious error when I added beamlattice-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
 		</xs:sequence>
+		<xs:attribute name="volumeid" type="ST_ResourceID" />
 	</xs:complexType>
 	<xs:complexType name="CT_Vertices">
 		<xs:sequence>
@@ -210,7 +212,7 @@
 		<xs:attribute ref="p:UUID" use="required"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
-	
+
 	<!-- Simple Types -->
 	<xs:simpleType name="ST_Unit">
 		<xs:restriction base="xs:string">
@@ -265,7 +267,7 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<!-- Elements -->
 	<xs:element name="metadatagroup" type="CT_MetadataGroup"/>
 	<xs:element name="model" type="CT_Model"/>
