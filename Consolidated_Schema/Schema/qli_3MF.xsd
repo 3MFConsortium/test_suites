@@ -11,7 +11,7 @@
 	xmlns:mm="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07"
 	xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07"
 	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
-	xmlns:d="http://schemas.3mf.io/3dmanufacturing/displacement/2024/02"
+	xmlns:d="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10"
 	xmlns:bo="http://schemas.3mf.io/3dmanufacturing/booleanoperations/2023/07"
 	xmlns:v="http://schemas.3mf.io/3dmanufacturing/volumetric/2022/01"
 	xmlns:i="http://schemas.3mf.io/3dmanufacturing/implicit/2023/12"
@@ -35,7 +35,7 @@
 	<xs:import
 		namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
 		schemaLocation="qli_production_alternative_import.xsd"/>
-	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/displacement/2024/02"
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10"
 		schemaLocation="qli_displacement_import.xsd"/>
 	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/booleanoperations/2023/07"
 		schemaLocation="qli_booleans_import.xsd"/>

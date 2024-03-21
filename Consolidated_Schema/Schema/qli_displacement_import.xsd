@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://schemas.3mf.io/3dmanufacturing/displacement/2024/02"
+<xs:schema xmlns="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	xmlns:core="http://schemas.microsoft.com/3dmanufacturing/core/2015/02/base"
-	targetNamespace="http://schemas.3mf.io/3dmanufacturing/displacement/2024/02"
+	xmlns:core="http://schemas.microsoft.com/3dmanufacturing/core/2015/02B"
+	targetNamespace="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10"
 	elementFormDefault="unqualified" attributeFormDefault="unqualified" blockDefault="#all">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
-	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02/base" schemaLocation="qli_core_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02B" schemaLocation="qli_core_import.xsd"/>
 	<xs:annotation> 
 		<xs:documentation><![CDATA[   Schema notes: 
  
@@ -34,7 +34,6 @@
 	<xs:complexType name="CT_Displacement2D">
 		<xs:attribute name="id" type="ST_ResourceID" use="required"/>
 		<xs:attribute name="path" type="ST_UriReference" use="required"/>
-		<xs:attribute name="contenttype" type="ST_ContentType" use="required"/>
 		<xs:attribute name="channel" type="ST_ChannelName" default="G"/>
 		<xs:attribute name="tilestyleu" type="ST_TileStyle" default="wrap"/>
 		<xs:attribute name="tilestylev" type="ST_TileStyle" default="wrap"/>
