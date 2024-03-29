@@ -1,0 +1,1 @@
+3MF Test Suite 11 consists of positive and negative test cases that exercise new features and requirements from the Displacement Extension specification.  Refer to sections 6.22 and 6.23 of the 3MF Test Specification for detailed test case definitions.

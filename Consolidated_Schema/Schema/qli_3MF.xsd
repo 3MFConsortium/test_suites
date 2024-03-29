@@ -120,8 +120,8 @@
 		<xs:sequence>
 			<xs:element ref="vertices"/>
 			<!-- Note that if Beam Lattice is a mandatory extension, triangles becomes optional if beamlattice element present-->
-			<!--  left triangle as optional for now-->
-			<xs:element ref="triangles"/>
+			<!--  Set MinOccurs for traingle and triangles to 0 so that bean lattice test cases do not trigger schema validations-->
+			<xs:element ref="triangles" minOccurs="0"/>
 			<xs:element ref="ts:trianglesets" minOccurs="0"/>
 			<xs:element ref="mm:mirrormesh" minOccurs="0"/>
 			<xs:element ref="b:beamlattice" minOccurs="0"/>
