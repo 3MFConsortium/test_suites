@@ -68,7 +68,7 @@
 			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:volumedata" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="v:function" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:functionfromimage3d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="i:implicitfunction" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="object" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
@@ -107,7 +107,7 @@
 				<xs:element ref="components"/>
 				<xs:element ref="bo:booleanshape"/>
 				<xs:element ref="d:displacementmesh"/>
-				<xs:element ref="v:boundaryshape"/>
+				<xs:element ref="v:levelset"/>
 			</xs:choice>
 			<xs:element ref="pa:alternatives" minOccurs="0"/>
 			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
