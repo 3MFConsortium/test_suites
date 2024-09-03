@@ -24,7 +24,7 @@
 
 	<!-- Complex Types -->
 	<xs:complexType name="CT_Resources">
-		<xs:choice minOccurs="0" maxOccurs="2147483647">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:any namespace="##other" processContents="lax" />
 			<xs:element ref="implicitfunction" />
 		</xs:choice>
@@ -2804,7 +2804,7 @@
 		]]>
 			</xs:documentation>
 		</xs:annotation>
-		<xs:choice minOccurs="0" maxOccurs="2147483647">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element ref="scalar"/>
 			<xs:element ref="vector"/>
 			<xs:element ref="matrix"/>
@@ -2821,10 +2821,10 @@
 					]]>
 			</xs:documentation>
 		</xs:annotation>
-		<xs:choice minOccurs="1" maxOccurs="2147483647">
-			<xs:element ref="scalarref" minOccurs="0" maxOccurs="2147483647" />
-			<xs:element ref="vectorref" minOccurs="0" maxOccurs="2147483647" />
-			<xs:element ref="matrixref" minOccurs="0" maxOccurs="2147483647" />
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element ref="scalarref" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="vectorref" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="matrixref" minOccurs="0" maxOccurs="unbounded" />
 			<xs:any namespace="##other" processContents="lax" />
 		</xs:choice>
 	</xs:complexType>
@@ -2933,7 +2933,7 @@
 			<xs:extension base="vol:CT_Function">
 				<xs:sequence>
 					<xs:element name="in" type="CT_Input" />
-					<xs:choice minOccurs="0" maxOccurs="2147483647">
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:group ref="BasicNodeTypes"  />
 					</xs:choice>
 					<xs:element name="out" type="CT_Output" />
@@ -2975,7 +2975,7 @@
 							]]>
 								</xs:documentation>
 							</xs:annotation>
-							<xs:choice minOccurs="1" maxOccurs="2147483647">
+							<xs:choice minOccurs="1" maxOccurs="unbounded">
 								<xs:element ref="scalarref" />
 								<xs:element ref="vectorref" />
 								<xs:element ref="matrixref" />
@@ -2992,7 +2992,7 @@
 									]]>
 								</xs:documentation>
 							</xs:annotation>
-							<xs:choice minOccurs="1" maxOccurs="2147483647">
+							<xs:choice minOccurs="1" maxOccurs="unbounded">
 								<xs:element ref="scalar" />
 								<xs:element ref="vector" />
 								<xs:element ref="matrix" />
