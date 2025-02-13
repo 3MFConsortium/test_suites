@@ -5,7 +5,7 @@ As part of the 3MF test suite development, QualityLogic, Inc developed a consoli
 This [3MF Consolidated Schema](qli_3MF.xsd) is being made available to the user community to simplify the task of validating 3MF package parts against the schema requirements. And to enable 3MF users to integrate their private namespace extensions into the consolidated schema to provide complete validation of the 3MF packages they generate. Please note that the Core and Extension specifications appendices remain the authoritative resource for the 3MF schema. 
 
 The consolidated schema  utilized the requirements from the following 3MF specifications:
-* [3MF Core Specification - Version 1.3.0](https://github.com/3MFConsortium/spec_core/blob/1.3.0/3MF%20Core%20Specification.md)
+* [3MF Core Specification - Version 1.4.0](https://github.com/3MFConsortium/spec_core/blob/1.4.0/3MF%20Core%20Specification.md)
 * [3MF Materials and Properties Extension - Version 1.2.1](https://github.com/3MFConsortium/spec_materials/blob/1.2.1/3MF%20Materials%20Extension.md)
 * [3MF Production Extension - Version 1.2.0](https://github.com/3MFConsortium/spec_production/blob/1.1.2/3MF%20Production%20Extension.md)
 * [3MF Slice Extension - Version 1.0.2](https://github.com/3MFConsortium/spec_slice/blob/1.0.2/3MF%20Slice%20Extension.md) 
