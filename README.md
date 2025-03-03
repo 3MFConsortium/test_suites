@@ -1,5 +1,5 @@
 # 3MF Conformance Test Suites
-| **Version** | 2.4.0 |
+| **Version** | 2.4.1 |
 | --- | --- |
 | **Status** | Unreleased |
 
