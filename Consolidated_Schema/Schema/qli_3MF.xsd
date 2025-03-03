@@ -24,7 +24,6 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/2015/06" schemaLocation="qli_production_import.xsd"/>
 	<xs:import namespace="http://print.ticket.com" schemaLocation="qli_printticket.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/material/2015/02" schemaLocation="qli_material.xsd"/>
-	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07" schemaLocation="qli_mirrormesh.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" schemaLocation="qli_triangleset.xsd"/>
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
 	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10" schemaLocation="qli_displacement_import.xsd"/>
@@ -132,7 +131,6 @@
 			<!--  Set MinOccurs for traingle and triangles to 0 so that bean lattice test cases do not trigger schema validations-->
 			<xs:element ref="triangles" minOccurs="0"/>
 			<xs:element ref="ts:trianglesets" minOccurs="0"/>
-			<xs:element ref="mm:mirrormesh" minOccurs="0"/>
 			<xs:element ref="b:beamlattice" minOccurs="0"/>
 			<!--Commented out as schema was giving me ambigious error when I added beamlattice-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
@@ -142,8 +140,8 @@
 	</xs:complexType>
 	<xs:complexType name="CT_Vertices">
 		<xs:sequence>
-			<!--Set vertex minoccurs zero as mirrormesh allows. Beam lattice min if no triangles in object is 2, for normal mesh min is 3-->
-			<xs:element ref="vertex" minOccurs="0" maxOccurs="unbounded"/>
+			<!--Set vertex minoccurs zero as Beam lattice min if no triangles in object is 2, for normal mesh min is 3-->
+			<xs:element ref="vertex" minOccurs="2" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="CT_Vertex">
