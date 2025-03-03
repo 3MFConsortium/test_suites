@@ -13,6 +13,8 @@
 	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
 	xmlns:d="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10"
 	xmlns:bo="http://schemas.3mf.io/3dmanufacturing/booleanoperations/2023/07"
+	xmlns:v="http://schemas.3mf.io/3dmanufacturing/volumetric/2022/01"
+	xmlns:i="http://schemas.3mf.io/3dmanufacturing/implicit/2023/12"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
 	
@@ -27,7 +29,9 @@
 	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
 	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10" schemaLocation="qli_displacement_import.xsd"/>
 	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/booleanoperations/2023/07" schemaLocation="qli_booleans_import.xsd"/>
-	
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/volumetric/2022/01" schemaLocation="qli_volumetric_import.xsd"/>
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/implicit/2023/12" schemaLocation="qli_implicit_import.xsd"/>
+		
 	<!-- Complex Types -->
 	<xs:complexType name="CT_Model">
 		<xs:sequence>
@@ -62,6 +66,10 @@
 			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:volumedata" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:functionfromimage3d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="i:implicitfunction" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="object" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:choice>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -99,6 +107,7 @@
 				<xs:element ref="components"/>
 				<xs:element ref="bo:booleanshape"/>
 				<xs:element ref="d:displacementmesh"/>
+				<xs:element ref="v:levelset"/>
 			</xs:choice>
 			<xs:element ref="pa:alternatives" minOccurs="0"/>
 			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
@@ -114,7 +123,7 @@
 		<xs:attribute name="name" type="xs:string"/>
 		<xs:attribute ref="s:slicestackid"/>
 		<xs:attribute ref="s:meshresolution"/>
-		<xs:attribute ref="pa:modelresolution"/>	
+		<xs:attribute ref="pa:modelresolution"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Mesh">
 		<xs:sequence>
@@ -128,6 +137,8 @@
 			<!--Commented out as schema was giving me ambigious error when I added beamlattice-->
 			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
 		</xs:sequence>
+		<xs:attribute name="volumeid" type="ST_ResourceID" />
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
 	<xs:complexType name="CT_Vertices">
 		<xs:sequence>
@@ -188,6 +199,7 @@
 		<xs:attribute ref="p:UUID" use="required"/>
 		<xs:anyAttribute namespace="##other" processContents="lax"/>
 	</xs:complexType>
+	
 	<!-- Simple Types -->
 	<xs:simpleType name="ST_Unit">
 		<xs:restriction base="xs:string">
@@ -239,6 +251,7 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
 	<!-- Elements -->
 	<xs:element name="metadatagroup" type="CT_MetadataGroup"/>
 	<xs:element name="model" type="CT_Model"/>
