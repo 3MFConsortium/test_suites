@@ -22,7 +22,7 @@ This repository contains 3MF conformance test suites. Each test suite provides c
 | Suite 11 | X |   |   |   |   |   |   | X |
 
 The test suites repository can be downloaded as a zip file under [releases](../../releases).
-Detailed information about the test cases can be found in the [3MF_Test_Specification_v2_4_1](test_specification/3MF_Test_Specification_v2_4_1.pdf)-document.
+Detailed information about the test cases can be found in the [3MF_Test_Specification_v2_4_1](test_specification/3MF_Test_Specification_v2_4_1.pdf) document.
 
 All test cases are based on the following versions of the 3MF specifications:
 * 3MF Core Specification - [Version 1.4.0](https://github.com/3MFConsortium/spec_core/blob/1.4.0/3MF%20Core%20Specification.md)
