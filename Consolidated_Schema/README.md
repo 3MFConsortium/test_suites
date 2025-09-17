@@ -13,7 +13,5 @@ The consolidated schema  utilized the requirements from the following 3MF specif
 * [3MF Secure Content Extension - Version 1.0.2](https://github.com/3MFConsortium/spec_securecontent/blob/1.0.2/3MF%20Secure%20Content.md) 
 * [3MF Boolean Operations Extension - Version 1.1.1](https://github.com/3MFConsortium/spec_booleans/blob/1.1.1/3MF%20Boolean%20operations.md) 
 * [3MF Displacement Extension - Version 1.0.0](https://github.com/3MFConsortium/spec_displacement/blob/1.0.0/3MF%20Displacement%20Extension.md) 
+* [3MF Volumetric & Implicit Extensions - Version 1.0.0](https://github.com/3MFConsortium/spec_volumetric/blob/1.0.0/3MF%20Volumetric%20Extension.md) 
 * [Office Open XML File Formats - Open Packaging Conventions - December 2012](https://www.ecma-international.org/news/TC45_current_work/Office%20Open%20XML%20Part%202%20-%20Open%20Packaging%20Conventions.pdf)
-
-It includes the draft versions of the following 3MF extensions:
-* [3MF Volumetric & Implicit Extensions - Pre-release 0.8.0](https://github.com/3MFConsortium/spec_volumetric/blob/master/3MF%20Volumetric%20Extension.md) 
