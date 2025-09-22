@@ -82,18 +82,9 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="matrixref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="matrixref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -561,18 +552,9 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="matrixref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="matrixref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -634,18 +616,9 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="matrixref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="matrixref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -707,18 +680,9 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="matrixref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="matrixref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -1426,14 +1390,8 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -1495,18 +1453,9 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="matrixref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="matrixref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -1568,18 +1517,9 @@
 								</xs:documentation>
 							</xs:annotation>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element ref="scalarref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="vectorref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
-								<xs:sequence>
-									<xs:element ref="matrixref"
-										minOccurs="2" maxOccurs="2" />
-								</xs:sequence>
+								<xs:element ref="scalarref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="vectorref" minOccurs="2" maxOccurs="2" />
+								<xs:element ref="matrixref" minOccurs="2" maxOccurs="2" />
 							</xs:choice>
 						</xs:complexType>
 					</xs:element>
@@ -3109,6 +3049,5 @@
 	<xs:element name="length" type="CT_Length" />
 	<xs:element name="constresourceid" type="CT_ConstResourceID" />
 	<xs:element name="mod" type="CT_Mod" />
-
 
 </xs:schema>
