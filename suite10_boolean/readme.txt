@@ -1,0 +1,1 @@
+3MF Test Suite 10 consists of positive and negative test cases that exercise new features and requirements from the Boolean Operations Extension specification.  Refer to sections 6.20 and 6.21 of the 3MF Test Specification for detailed test case definitions.

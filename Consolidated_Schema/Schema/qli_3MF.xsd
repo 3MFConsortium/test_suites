@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by James Zuber (private) -->
+<xs:schema xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02"
+	xmlns:m="http://schemas.microsoft.com/3dmanufacturing/material/2015/02"
+	xmlns:s="http://schemas.microsoft.com/3dmanufacturing/slice/2015/07"
+	xmlns:pt="http://print.ticket.com"
+	xmlns:p="http://schemas.microsoft.com/3dmanufacturing/production/2015/06"
+	xmlns:b="http://schemas.microsoft.com/3dmanufacturing/beamlattice/2017/02"
+	xmlns:b2="http://schemas.microsoft.com/3dmanufacturing/beamlattice/balls/2020/07"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:mm="http://schemas.microsoft.com/3dmanufacturing/mirroring/2021/07"
+	xmlns:ts="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07"
+	xmlns:pa="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04"
+	xmlns:d="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10"
+	xmlns:bo="http://schemas.3mf.io/3dmanufacturing/booleanoperations/2023/07"
+	xmlns:v="http://schemas.3mf.io/3dmanufacturing/volumetric/2022/01"
+	xmlns:i="http://schemas.3mf.io/3dmanufacturing/implicit/2023/12"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	targetNamespace="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all">
+	
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/slice/2015/07" schemaLocation="qli_slice_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/beamlattice/2017/02" schemaLocation="qli_beamlattice_import.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/2015/06" schemaLocation="qli_production_import.xsd"/>
+	<xs:import namespace="http://print.ticket.com" schemaLocation="qli_printticket.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/material/2015/02" schemaLocation="qli_material.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/trianglesets/2021/07" schemaLocation="qli_triangleset.xsd"/>
+	<xs:import namespace="http://schemas.microsoft.com/3dmanufacturing/production/alternatives/2021/04" schemaLocation="qli_production_alternative_import.xsd"/>
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/displacement/2023/10" schemaLocation="qli_displacement_import.xsd"/>
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/booleanoperations/2023/07" schemaLocation="qli_booleans_import.xsd"/>
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/volumetric/2022/01" schemaLocation="qli_volumetric_import.xsd"/>
+	<xs:import namespace="http://schemas.3mf.io/3dmanufacturing/implicit/2023/12" schemaLocation="qli_implicit_import.xsd"/>
+		
+	<!-- Complex Types -->
+	<xs:complexType name="CT_Model">
+		<xs:sequence>
+			<xs:element ref="metadata" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="resources"/>
+			<xs:element ref="build"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="unit" type="ST_Unit" default="millimeter"/>
+		<xs:attribute ref="xml:lang"/>
+		<xs:attribute name="requiredextensions" type="xs:string"/>
+		<xs:attribute name="recommendedextensions" type="xs:string"/>
+		<xs:attribute name="thumbnail" type="ST_UriReference"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Resources">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="basematerials" minOccurs="0" maxOccurs="unbounded"/>
+			<!--Commented out as schema was giving me ambigious error when I added slicestack-->
+			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
+			<xs:element ref="m:texture2d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:texture2dgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:colorgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:compositematerials" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:multiproperties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:pbspeculardisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:pbmetallicdisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:pbmetallictexturedisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:pbspeculartexturedisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:translucentdisplayproperties" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="s:slicestack" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:displacement2d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:normvectorgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="d:disp2dgroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:volumedata" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:image3d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="v:functionfromimage3d" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="i:implicitfunction" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="object" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Build">
+		<xs:sequence>
+			<!--Only mandatory in root model file -->
+			<xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="p:UUID"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_BaseMaterials">
+		<xs:sequence>
+			<xs:element ref="base" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="ST_ResourceID" use="required"/>
+		<xs:attribute ref="m:displaypropertiesid"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Base">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="displaycolor" type="ST_ColorValue" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_MetadataGroup">
+		<xs:sequence>
+			<xs:element ref="metadata" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_Object">
+		<xs:sequence>
+			<xs:element ref="metadatagroup" minOccurs="0"/>
+			<xs:choice>
+				<xs:element ref="mesh"/>
+				<xs:element ref="components"/>
+				<xs:element ref="bo:booleanshape"/>
+				<xs:element ref="d:displacementmesh"/>
+				<xs:element ref="v:levelset"/>
+			</xs:choice>
+			<xs:element ref="pa:alternatives" minOccurs="0"/>
+			<!--<Commented out as schema was giving me ambigious error when I added beamlattice-->
+			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+		</xs:sequence>
+		<xs:attribute name="id" type="ST_ResourceID" use="required"/>
+		<xs:attribute ref="p:UUID" use="required"/>
+		<xs:attribute name="type" type="ST_ObjectType" default="model"/>
+		<xs:attribute name="pid" type="ST_ResourceID"/>
+		<xs:attribute name="pindex" type="ST_ResourceIndex"/>
+		<xs:attribute name="thumbnail" type="ST_UriReference"/>
+		<xs:attribute name="partnumber" type="xs:string"/>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute ref="s:slicestackid"/>
+		<xs:attribute ref="s:meshresolution"/>
+		<xs:attribute ref="pa:modelresolution"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Mesh">
+		<xs:sequence>
+			<xs:element ref="vertices"/>
+			<!-- Note that if Beam Lattice is a mandatory extension, triangles becomes optional if beamlattice element present-->
+			<!--  Set MinOccurs for traingle and triangles to 0 so that bean lattice test cases do not trigger schema validations-->
+			<xs:element ref="triangles" minOccurs="0"/>
+			<xs:element ref="ts:trianglesets" minOccurs="0"/>
+			<xs:element ref="b:beamlattice" minOccurs="0"/>
+			<!--Commented out as schema was giving me ambigious error when I added beamlattice-->
+			<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/> -->
+		</xs:sequence>
+		<xs:attribute name="volumeid" type="ST_ResourceID" />
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Vertices">
+		<xs:sequence>
+			<!--Set vertex minoccurs zero as Beam lattice min if no triangles in object is 2, for normal mesh min is 3-->
+			<xs:element ref="vertex" minOccurs="2" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_Vertex">
+		<xs:attribute name="x" type="ST_Number" use="required"/>
+		<xs:attribute name="y" type="ST_Number" use="required"/>
+		<xs:attribute name="z" type="ST_Number" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Triangles">
+		<xs:sequence>
+			<xs:element ref="triangle" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_Triangle">
+		<xs:attribute name="v1" type="ST_ResourceIndex" use="required"/>
+		<xs:attribute name="v2" type="ST_ResourceIndex" use="required"/>
+		<xs:attribute name="v3" type="ST_ResourceIndex" use="required"/>
+		<xs:attribute name="p1" type="ST_ResourceIndex"/>
+		<xs:attribute name="p2" type="ST_ResourceIndex"/>
+		<xs:attribute name="p3" type="ST_ResourceIndex"/>
+		<xs:attribute name="pid" type="ST_ResourceID"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Components">
+		<xs:sequence>
+			<xs:element ref="component" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_Component">
+		<xs:sequence>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="objectid" type="ST_ResourceID" use="required"/>
+		<xs:attribute name="transform" type="ST_Matrix3D"/>
+		<xs:attribute ref="p:path"/>
+		<xs:attribute ref="p:UUID" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Metadata" mixed="true">
+		<xs:attribute name="name" type="xs:QName" use="required"/>
+		<xs:attribute name="preserve" type="xs:boolean" use="optional"/>
+		<xs:attribute name="type" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Item">
+		<xs:sequence>
+			<xs:element ref="metadatagroup" minOccurs="0"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="objectid" type="ST_ResourceID" use="required"/>
+		<xs:attribute name="transform" type="ST_Matrix3D"/>
+		<xs:attribute name="partnumber" type="xs:string"/>
+		<xs:attribute ref="p:path"/>
+		<xs:attribute ref="p:UUID" use="required"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	
+	<!-- Simple Types -->
+	<xs:simpleType name="ST_Unit">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="micron"/>
+			<xs:enumeration value="millimeter"/>
+			<xs:enumeration value="centimeter"/>
+			<xs:enumeration value="inch"/>
+			<xs:enumeration value="foot"/>
+			<xs:enumeration value="meter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_ColorValue">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="#[0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f][0-9|A-F|a-f]([0-9|A-F|a-f][0-9|A-F|a-f])?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_UriReference">
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value="/.*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_Matrix3D">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?) ((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_Number">
+		<xs:restriction base="xs:double">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="((\-|\+)?(([0-9]+(\.[0-9]+)?)|(\.[0-9]+))((e|E)(\-|\+)?[0-9]+)?)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_ResourceID">
+		<xs:restriction base="xs:positiveInteger">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_ResourceIndex">
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxExclusive value="2147483648"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ST_ObjectType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="model"/>
+			<xs:enumeration value="solidsupport"/>
+			<xs:enumeration value="support"/>
+			<xs:enumeration value="surface"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Elements -->
+	<xs:element name="metadatagroup" type="CT_MetadataGroup"/>
+	<xs:element name="model" type="CT_Model"/>
+	<xs:element name="resources" type="CT_Resources"/>
+	<xs:element name="build" type="CT_Build"/>
+	<xs:element name="basematerials" type="CT_BaseMaterials"/>
+	<xs:element name="base" type="CT_Base"/>
+	<xs:element name="object" type="CT_Object"/>
+	<xs:element name="mesh" type="CT_Mesh"/>
+	<xs:element name="vertices" type="CT_Vertices"/>
+	<xs:element name="vertex" type="CT_Vertex"/>
+	<xs:element name="triangles" type="CT_Triangles"/>
+	<xs:element name="triangle" type="CT_Triangle"/>
+	<xs:element name="components" type="CT_Components"/>
+	<xs:element name="component" type="CT_Component"/>
+	<xs:element name="metadata" type="CT_Metadata"/>
+	<xs:element name="item" type="CT_Item"/>
+</xs:schema>
